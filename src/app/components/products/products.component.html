@@ -1,0 +1,28 @@
+<table class="table table-bordererd">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>price</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productList; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+
+ 
+      <td>
+        <button type="button" class="btn btn-info">Info</button>
+        <button routerLink="/products/{{ product.id }}">Detail</button>
+        <button routerLink="/products/edit/{{ product.id }}">eidt</button>
+        <button class="btn btn-primary" (click)="onRemoveItem(product.id!)">Remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<router-outlet></router-outlet>

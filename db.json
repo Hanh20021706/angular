@@ -1,22 +1,33 @@
 {
-    "products" : [
-        {
-            "id": 1,
-          "name" : "Product B update",
-          "price" : 3000,
-          "status" : false
-          },
-          {
-            "id": 2,
-          "name" : "Product C",
-          "price" : 4000,
-          "status" : true
-          },
-          {
-            "id": 3,
-            "name" : "Product D",
-            "price" : 5000,
-            "status" : true
-          }
-    ]
+  "products": [
+    {
+      "id": 2,
+      "name": "Product C",
+      "price": 4000,
+      "status": true
+    },
+    {
+      "id": 3,
+      "name": "Product D",
+      "price": 5000,
+      "status": true
+    },
+    {
+      "name": "doraemon update",
+      "price": 2300,
+      "status": true,
+      "id": 4
+    },
+    {
+      "name": "xiaomi",
+      "price": 2300000,
+      "status": true,
+      "id": 5
+    }
+  ],
+  "user" : [
+    {
+      "id": 1
+    }
+  ]
 }

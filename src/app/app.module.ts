@@ -2,43 +2,32 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelloComponent } from './components/hello.component';
 import { AboutComponent } from './about/about.component';
-import { ProductsComponent } from './products/products.component';
+import { ProductsComponent } from './components/products/products.component';
 import { FormsModule } from '@angular/forms';
-import { NameComponent } from './name/name.component';
-import { ProductAddComponent } from './product-add/product-add.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
-import { NavAdminComponent } from './components/nav-admin/nav-admin.component';
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
-import { ProductPageComponent } from './product-page/product-page.component';
-import { ClientComponent } from './layout/client/client.component';
-import { AdminComponent } from './layout/admin/admin.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { HeaderClientComponent } from './components/header-client/header-client.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
+import { HomePageComponent } from './page/home-page/home-page.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import {HttpClientModule} from '@angular/common/http'
+import {RouterModule} from '@angular/router';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IconsProviderModule } from './icons-provider.module';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzMenuModule } from 'ng-zorro-antd/menu'
+
+registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloComponent,
     AboutComponent,
     ProductsComponent,
-    NameComponent,
     ProductAddComponent,
-    FooterComponent,
-    HeaderAdminComponent,
-    NavAdminComponent,
-    SigninComponent,
-    SignupComponent,
-    ProductPageComponent,
-    ClientComponent,
-    AdminComponent,
     HomePageComponent,
-    HeaderClientComponent,
     ProductDetailComponent,
     
   ],
@@ -46,9 +35,14 @@ import {HttpClientModule} from '@angular/common/http'
     BrowserModule,
     AppRoutingModule, 
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    IconsProviderModule,
+    NzLayoutModule,
+    NzMenuModule
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
